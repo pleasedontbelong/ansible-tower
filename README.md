@@ -6,19 +6,15 @@ Dockerfile for standalone [Ansible Tower](https://www.ansible.com/tower) 3.x+
 
 # Build
 ```
-docker build --no-cache --squash -t ansible-tower:${TOWER_VERSION} .
+docker build -t ansible-tower:3.4.1-1 .
 ```
 
 # Run
 
-Run Ansible Tower with a random port:
-```
-docker run -d -P --name tower ybalt/ansible-tower
-```
+Run Ansible Tower on port 80:
 
-or map to exposed port 443:
 ```
-docker run -d -p 443:443 --name tower ybalt/ansible-tower
+docker run -d -p 443:443 --name ansible_tower_1 ansible-tower:3.4.1-1
 ```
 
 To include certificate and license on container creation:
